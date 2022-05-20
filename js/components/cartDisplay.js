@@ -6,7 +6,9 @@ export default function cartProductDisplay() {
   const currentCartProducts = JSON.parse(localStorage.getItem("cartProductList"));
   cartProductHolder.innerHTML = "";
 
-  for (let i = 0; i < currentCartProducts.length; i++) {
+  if (currentCartProducts) {
+
+    for (let i = 0; i < currentCartProducts.length; i++) {
 
       cartProductHolder.innerHTML += `
       <div class="cartProductBlock">
@@ -26,10 +28,14 @@ export default function cartProductDisplay() {
       `;
     }
 
-  const cartRemoveButtons = document.querySelectorAll(".cartProductBlockRemove");
+    const cartRemoveButtons = document.querySelectorAll(".cartProductBlockRemove");
 
-  for (let i = 0; i < cartRemoveButtons.length; i++) {
-    cartRemoveButtons[i].addEventListener("click", cartRemoveFunction);
+    for (let i = 0; i < cartRemoveButtons.length; i++) {
+      cartRemoveButtons[i].addEventListener("click", cartRemoveFunction);
+    }
+
   }
+
+  
   
 };
