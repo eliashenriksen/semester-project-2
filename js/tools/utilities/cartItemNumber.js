@@ -6,7 +6,7 @@ export default function cartItemNumber() {
 
   if (!currentCartProducts || currentCartProducts.length === 0 ) {
     cartItemNumberHolder.style.opacity = "0";
-    console.log("number of items in cart " + currentCartProducts.length);
+    console.log("No items in cart!");
   } else {
     cartItemNumberHolder.style.opacity = "1";
     cartItemNumberHolder.innerHTML = `
