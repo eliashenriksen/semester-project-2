@@ -1,0 +1,37 @@
+
+footer {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 10rem;
+  flex-shrink: 0;
+  width: 100%;
+
+  img {
+    z-index: 9999;
+    position: relative;
+    left: 50%;
+    bottom: -100px;
+  }
+
+}
+
+.custom-shape-divider-bottom-1652751118 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1652751118 svg {
+  position: relative;
+  display: block;
+  width: calc(123% + 1.3px);
+  height: 124px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1652751118 .shape-fill {
+  fill: #16ECAC;
+}

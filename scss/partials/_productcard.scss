@@ -1,0 +1,46 @@
+.productsHolder a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 4rem;
+}
+
+.productsHolder a:hover {
+
+  img {
+    outline: 3px solid $mainBrandColor;
+  }
+  .card-body {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 5px;
+    animation: fade 0.5s ease-in-out 1;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+  }
+}
+
+
+.card {
+  border: none;
+
+  img {
+    border-radius: 0px;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: $mainBackgroundShadow;
+  }
+
+  .card-body {
+    color: $mainBlackColor;
+    margin-top: 1rem;
+    padding: 0px;
+  }
+
+  .card-text {
+    max-height: 100px;
+    overflow: hidden;
+  }
+}

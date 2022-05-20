@@ -1,0 +1,18 @@
+.ctaButtons {
+  outline: none;
+  border: none;
+  background-color: $mainBrandColor;
+  color: $mainWhiteColor;
+  font-size: 18px;
+  font-family: 'Inter',
+      sans-serif;
+  padding: 1rem 3rem 1rem 3rem;
+  transition: color 1s, background-color 1s;
+}
+
+.ctaButtons:hover {
+  box-shadow: $mainBackgroundShadow;
+  cursor: pointer;
+  color: $mainBrandColor;
+  background-color: $mainWhiteColor;
+}

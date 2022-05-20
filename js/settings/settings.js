@@ -1,0 +1,1 @@
+export const apiLinkMasterKey = "http://localhost:1337";

@@ -1,0 +1,126 @@
+.navbar {
+  margin-left: 10rem;
+  margin-right: 4rem;
+  background-color: transparent !important;
+
+  @media only screen and (max-width: 1400px) {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+
+  ul {
+    @media only screen and (max-width: 1400px) {
+        margin-left: 2rem !important;
+        margin-right: auto !important;
+      }
+  }
+}
+
+.navbarContainer {
+  padding: 0rem !important;
+  margin: 0rem !important;
+}
+
+.navbar-collapse {
+
+  @media only screen and (max-width: 992px) {
+      background-color: $mainBrandColor !important;
+    }
+
+}
+
+.mainlogo {
+  max-width: 200px;
+  height: auto;
+  margin-right: 2rem;
+}
+
+.navbar-brand {
+  z-index: 9999;
+  @media only screen and (max-width: 1400px) {
+      margin-left: 2rem;
+    }
+}
+
+.nav-link {
+  transition: none !important;
+  color: $mainWhiteColor !important;
+}
+
+.navLinkShoppingcart {
+  display: flex;
+  @media only screen and (max-width: 1400px) {
+      margin:0rem 0rem 1rem 0rem;
+   }
+}
+
+.navLinkShoppingcart:hover {
+
+  i {
+    color: darken($color: $mainBrandColor, $amount: 10%);
+    box-shadow: $mainBackgroundShadow;
+  }
+}
+
+.nav-item a:hover {
+  color: darken($color: $mainBrandColor, $amount: 10%) !important;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 5px;
+  animation: fade 0.5s ease-in-out 1;
+  animation-fill-mode: forwards;
+}
+
+.active {
+  color: $mainWhiteColor !important;
+  text-decoration: wavy;
+}
+
+.navbar-toggler {
+  margin-right: 2rem;
+  outline: none;
+  border: none;
+}
+
+.cartItemNumberHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: $mainWhiteColor;
+  background-color: orange;
+  border-radius: 100%;
+  position: relative;
+  right: 10px;
+  top: -10px;
+
+  p {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.navLinkLogin, .navLinkLogout {
+  @extend .navLinkShoppingcart;
+}
+
+.navLinkLogout {
+  display: none;
+}
+
+.navLinkLogout:hover {
+  cursor: pointer;
+}
+
+.navbar-text {
+  display: flex;
+  flex-direction: row;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  
+  @media only screen and (max-width: 576px) {
+      flex-direction: column;
+   }
+
+}

@@ -1,0 +1,53 @@
+#cartMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  margin-bottom: 5rem;
+}
+
+.cartProductHolder {
+  background-color: rgb(255, 255, 255);
+  margin-top: 10rem;
+}
+
+.cartProductBlock {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: $backgroundWhiteColor;
+  //outline: solid 1px rgba(0, 0, 0, 0.075);
+  justify-content: space-between;
+  box-shadow: $mainBackgroundShadow;
+
+  .cartProductBlockImageHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    flex: 2;
+
+    img {
+        height: 500px;
+        object-fit: cover;
+        box-shadow: $mainBackgroundShadow;
+      }
+  }
+
+  .cartProductBlockInfo {
+    flex: 6;
+    margin-left: 2rem;
+  }
+
+  .cartProductBlockRemoveHolder {
+    .cartProductBlockRemove {
+      cursor: pointer;
+      color: $mainBlackColor;
+    }
+  }
+}

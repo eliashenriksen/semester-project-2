@@ -1,0 +1,48 @@
+#adminLoginMain {
+  @extend #homepageMain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginFormHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .loginFormWhole {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+
+    section {
+      width: 12rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      transition: width 2s;
+
+      label {
+        align-self: flex-start;
+      }
+
+      input {
+        width: 100%;
+        border: none;
+        padding: 1rem;
+        background-color: $backgroundWhiteColor;
+        box-shadow: $mainBackgroundShadow;
+      }
+
+      input:focus {
+        outline: none;
+      }
+    }
+
+    section:focus-within {
+      width: 15rem;
+    }
+  }
+}

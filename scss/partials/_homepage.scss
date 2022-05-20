@@ -1,0 +1,62 @@
+#homepageMain {
+  min-height: 100%;
+  height: auto;
+}
+
+.heroBannerHolder {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 500px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: $mainBackgroundShadow;
+  background-color: $mainWhiteColor;
+
+  img {
+    max-width: 1600px;
+  }
+
+  h1 {
+    position: absolute;
+    margin: 3rem;
+    left: 250px;
+    color: $mainBrandColor;
+    max-width: 300px;
+
+    @media only screen and (max-width: 1280px) {
+      left: 50px;
+    }
+  }
+}
+
+.carousel {
+  box-shadow: $mainBackgroundShadow;
+}
+
+.carousel-item {
+  max-height: 500px;
+  img {
+    height: 500px;
+    object-fit: cover;
+  }
+}
+
+.carousel-caption {
+  color: $mainWhiteColor;
+  background-color: $fadedBackgroundBlackColor;
+}
+
+.carousel-control-prev-icon {
+  background-image: url(/images/arrowleft.png);
+  height: 114.5px;
+  width: 70.5px;
+}
+
+.carousel-control-next-icon {
+  background-image: url(/images/arrowright.png);
+  height: 114.5px;
+  width: 70.5px;
+}

@@ -1,0 +1,52 @@
+#productSpecificMain {
+  @extend #homepageMain;
+}
+
+.productSpecificProductBlock {
+  display: none;
+
+  div {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
+}
+
+.productSpecificImageHolder {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 500px;
+
+  img {
+    box-shadow: $mainBackgroundShadow;
+  }
+
+}
+
+.productSpecificImage {
+  width: 400px;
+  object-fit: cover;
+}
+
+.productSpecificProductBlockRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.productSpecificAddToCart {
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+}

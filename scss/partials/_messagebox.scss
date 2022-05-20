@@ -1,0 +1,21 @@
+.messageHolderStatic {
+  display: none;
+  background-color: $backgroundWhiteColor;
+  box-shadow: $mainBackgroundShadow;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+
+  p {
+    margin: 0px;
+  }
+}
+
+.messageHolder {
+  @extend .messageHolderStatic;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
