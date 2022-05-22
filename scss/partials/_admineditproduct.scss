@@ -27,9 +27,28 @@
 }
 
 .updateProductFormWhole {
-  section {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
+  @extend .newProductFormWhole;
+}
+
+.updateProductDeleteProductButton {
+  border-radius: 0%;
+  margin-top: 5rem;
+}
+
+.adminEditProductImageHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50rem;
+  height: 25rem;
+  overflow: hidden;
+  margin-bottom: 5rem;
+  img {
+    object-fit: cover;
+    height: 25rem;
+    width: auto;
   }
+  @media only screen and (max-width: 1400px) {
+      max-width: 30rem;
+    }
 }

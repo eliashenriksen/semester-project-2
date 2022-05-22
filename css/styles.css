@@ -822,6 +822,10 @@ footer img {
   margin: 0rem 1rem 4rem 1rem;
 }
 
+.card-text {
+  height: 15rem !important;
+}
+
 .adminHomeProductCardInfoHolder {
   border-top: 2px solid #16ecac;
   border-bottom: 2px solid #16ecac;
@@ -869,6 +873,10 @@ footer img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -877,7 +885,52 @@ footer img {
           justify-content: center;
 }
 
-.newProductFormWhole section {
+.newProductFormWhole, .updateProductFormWhole {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.newProductFormWhole .adminNewProductUploadImageSection, .updateProductFormWhole .adminNewProductUploadImageSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.newProductFormWhole .adminNewProductUploadImageSection input[type=file], .updateProductFormWhole .adminNewProductUploadImageSection input[type=file] {
+  margin-left: 9.5rem;
+  width: 20rem;
+}
+
+.newProductFormWhole .adminNewProductFeaturedSection, .updateProductFormWhole .adminNewProductFeaturedSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.newProductFormWhole section, .updateProductFormWhole section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -886,6 +939,53 @@ footer img {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 2rem;
+}
+
+.newProductFormWhole section #title, .updateProductFormWhole section #title, .newProductFormWhole section #price, .updateProductFormWhole section #price, .newProductFormWhole section #description, .updateProductFormWhole section #description {
+  width: 15rem !important;
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  -webkit-box-shadow: 0px 5px 6px #16ecac45;
+          box-shadow: 0px 5px 6px #16ecac45;
+  -webkit-transition: width 2s;
+  transition: width 2s;
+}
+
+.newProductFormWhole section #description, .updateProductFormWhole section #description {
+  width: 20rem !important;
+}
+
+.newProductFormWhole section #featured, .updateProductFormWhole section #featured {
+  height: 2rem;
+  width: 2rem;
+  background-color: #f8f9fa;
+  -webkit-box-shadow: 0px 5px 6px #16ecac45;
+          box-shadow: 0px 5px 6px #16ecac45;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.newProductFormWhole section #featured:checked, .updateProductFormWhole section #featured:checked {
+  background-color: #16ecac;
+}
+
+.newProductFormWhole section #title:focus, .updateProductFormWhole section #title:focus, .newProductFormWhole section #price:focus, .updateProductFormWhole section #price:focus {
+  outline: none;
+  width: 20rem !important;
+}
+
+.newProductFormWhole section #description:focus, .updateProductFormWhole section #description:focus {
+  outline: none;
+  width: 30rem !important;
+}
+
+@media only screen and (max-width: 1400px) {
+  .newProductFormWhole section #description:focus, .updateProductFormWhole section #description:focus {
+    width: 25rem !important;
+  }
 }
 
 .modal-dialog {
@@ -917,14 +1017,37 @@ footer img {
   background-color: #ff999e;
 }
 
-.updateProductFormWhole section {
+.updateProductDeleteProductButton {
+  border-radius: 0%;
+  margin-top: 5rem;
+}
+
+.adminEditProductImageHolder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 50rem;
+  height: 25rem;
+  overflow: hidden;
+  margin-bottom: 5rem;
+}
+
+.adminEditProductImageHolder img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 25rem;
+  width: auto;
+}
+
+@media only screen and (max-width: 1400px) {
+  .adminEditProductImageHolder {
+    max-width: 30rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

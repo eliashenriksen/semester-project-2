@@ -33,8 +33,8 @@ export default async function adminCreateNewProduct() {
     if (uploadResponse1.price) {
       messagePopup(`New product, ${uploadResponse1.title} with a price of USD ${uploadResponse1.price} added succesfully!`);
       setTimeout(() => {
-        document.location.href = "adminhome.html";
-      }, 3500);
+        document.location.href = `admineditproduct.html?product_id=${uploadResponse1.id}`;
+      }, 1000);
     }
 
   } catch(error) {
