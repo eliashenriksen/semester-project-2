@@ -10,11 +10,16 @@ export default function cartProductDisplay() {
 
     for (let i = 0; i < currentCartProducts.length; i++) {
 
+      // Checking if the product has a placeholder image or a real image, if its a real image it needs the api link infront of it cause its not in the local folder.
+      if(currentCartProducts[i].image.url !== "/images/productplaceholderimage.jpg") {
+        currentCartProducts[i].image.url = `${apilink}${currentCartProducts[i].image.url}`;
+      }
+
       cartProductHolder.innerHTML += `
       <div class="cartProductBlock">
         <div class="cartProductBlockImageHolder">
           <a href="productspecific.html?product_id=${currentCartProducts[i].id}">
-            <img src="${apilink}${currentCartProducts[i].image.url}" alt="${currentCartProducts[i].image.alternativeText}">
+            <img src="${currentCartProducts[i].image.url}" alt="${currentCartProducts[i].image.alternativeText}">
           </a>
         </div>
         <div class="cartProductBlockInfo">
@@ -36,6 +41,4 @@ export default function cartProductDisplay() {
 
   }
 
-  
-  
 };

@@ -1,4 +1,4 @@
-//import { apiLinkMasterKey as apilink} from "../settings/settings.js";
+import messagePopup from "../tools/functionality/messagePopup.js";
 import loaderRemover from "../tools/utilities/loaderRemover.js";
 import cartItemNumber from "../tools/utilities/cartItemNumber.js";
 import loginHandler from "../tools/login/loginHandler.js";
@@ -27,7 +27,8 @@ function adminLoginHandler() {
       if (inputName.value.trim() && inputPassword.value.trim()) {
           loginHandler(inputName.value.trim(), inputPassword.value.trim());
       } else {
-          console.log("Missing a username or password value.")
+          messagePopup("Missing a username or password value.");
+          console.log("Missing a username or password value.");
       };
 
     }

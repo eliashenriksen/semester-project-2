@@ -1,5 +1,6 @@
 import { apiLinkMasterKey as apilink } from "../../settings/settings.js";
 import { uploadToStorage } from "../storage/localStorage.js";
+import messagePopup from "../functionality/messagePopup.js";
 
 export default async function loginHandler(username, password) {
 
@@ -22,10 +23,12 @@ export default async function loginHandler(username, password) {
         console.log(response);
 
         if(!response.user) {
-            messageBox("Invalid username or password.");
+            messagePopup("Invalid username or password.");
         } else {
             uploadToStorage("JWT", response.jwt);
-            console.log(response.jwt);
+            uploadToStorage("username", response.user.username);
+            //console.log(response.jwt);
+            //console.log(response.user.username);
             document.location.href = "adminhome.html";
         }
 

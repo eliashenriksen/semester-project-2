@@ -2,13 +2,9 @@ import { apiLinkMasterKey as apilink } from "../settings/settings.js";
 import loaderRemover from "../tools/utilities/loaderRemover.js";
 import cartItemNumber from "../tools/utilities/cartItemNumber.js";
 import logoutButton from "../tools/login/logoutButton.js";
-//import bookDisplay from "/js/components/bookDisplay.js";
-//import bookFilter from "../tools/filter/bookFilter.js";
-
-export let bookList = "";
+import messagePopup from "../tools/functionality/messagePopup.js";
 
 async function homeContentCreator() {
-  //const messageHolder = document.querySelector(".messageHolder");
   const heroBannerHolder = document.querySelector(".heroBannerHolder");
   const carouselItemHolder = document.querySelector(".carousel-inner");
 
@@ -18,8 +14,8 @@ async function homeContentCreator() {
     const response1 = await call1.json();
     const response2 = await call2.json();
 
-    console.log(response1);
-    console.log(response2);
+    //console.log(response1);
+    //console.log(response2);
 
     heroBannerHolder.innerHTML = `
     <img src="${apilink}${response1.hero_banner.url}" alt="${response1.hero_banner.alternativeText}">
@@ -47,15 +43,10 @@ async function homeContentCreator() {
     logoutButton();
     cartItemNumber();
     loaderRemover();
-    //bookList = response1;
-
-    //bookDisplay(response);
-    //bookFilter(response);
 
   } catch(error) {
     console.log(error);
-    //messageHolder.style.display = "flex";
-    //messageHolder.innerHTML = `<p>An error has occured while fetching the book list, please contact support.</p>`;
+    messagePopup(`${error}`);
   } 
 
 }

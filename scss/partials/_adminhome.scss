@@ -1,4 +1,50 @@
 #adminHomeMain {
   @extend #homepageMain;
   display: flex;
+  margin-top: 5rem !important;
+}
+
+.adminHomeNewProductButtonHolder {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminHomeProductsHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.adminHomeProductCard {
+  margin: 0rem 1rem 4rem 1rem;
+}
+
+.adminHomeProductCardInfoHolder {
+
+  border-top: 2px solid $mainBrandColor;
+  border-bottom: 2px solid $mainBrandColor;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+.adminHomeProductCardInfoRight {
+  align-items: flex-end;
+  justify-content: flex-end;
+  p {
+    text-align: center;
+    font-weight: bold;
+    //border-bottom: 2px solid red;
+  }
+}
+
+.adminHomeProductCardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

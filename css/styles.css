@@ -201,7 +201,7 @@ a {
           box-shadow: 0px 5px 6px #16ecac45;
 }
 
-.nav-item a:hover {
+.nav-item a:hover, .nav-item .active {
   color: #10bf8b !important;
   text-decoration: underline;
   -webkit-text-decoration-style: wavy;
@@ -214,9 +214,7 @@ a {
 }
 
 .active {
-  color: #1d1d1d !important;
-  -webkit-text-decoration: wavy;
-          text-decoration: wavy;
+  color: black !important;
 }
 
 .navbar-toggler {
@@ -226,6 +224,7 @@ a {
 }
 
 .cartItemNumberHolder {
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,7 +316,7 @@ footer img {
   fill: #16ECAC;
 }
 
-#homepageMain, #productSpecificMain, #adminLoginMain {
+#homepageMain, #productSpecificMain, #adminLoginMain, #adminHomeMain, #adminNewProductMain, #adminEditProductMain {
   min-height: 100%;
   height: auto;
 }
@@ -478,11 +477,11 @@ footer img {
   margin-bottom: 4rem;
 }
 
-.productsHolder a:hover img {
+.productsHolder a:hover img, .productsHolder .active img {
   outline: 3px solid #16ecac;
 }
 
-.productsHolder a:hover .card-body {
+.productsHolder a:hover .card-body, .productsHolder .active .card-body {
   text-decoration: underline;
   -webkit-text-decoration-style: wavy;
           text-decoration-style: wavy;
@@ -522,7 +521,7 @@ footer img {
   color: black;
 }
 
-.breadcrumb-item a:hover {
+.breadcrumb-item a:hover, .breadcrumb-item .active {
   text-decoration: underline;
   -webkit-text-decoration-style: wavy;
           text-decoration-style: wavy;
@@ -784,5 +783,148 @@ footer img {
 
 .loginFormHolder .loginFormWhole section:focus-within {
   width: 15rem;
+}
+
+#adminHomeMain, #adminNewProductMain, #adminEditProductMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5rem !important;
+}
+
+.adminHomeNewProductButtonHolder {
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.adminHomeProductsHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5rem;
+}
+
+.adminHomeProductCard {
+  margin: 0rem 1rem 4rem 1rem;
+}
+
+.adminHomeProductCardInfoHolder {
+  border-top: 2px solid #16ecac;
+  border-bottom: 2px solid #16ecac;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.adminHomeProductCardInfoRight {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.adminHomeProductCardInfoRight p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.adminHomeProductCardBottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.adminNewProductFormHolder {
+  margin-top: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.newProductFormWhole section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.modal-dialog {
+  top: 25%;
+}
+
+.modal-content {
+  background-color: #f8f9fa;
+  border-radius: 0%;
+}
+
+.modal-content div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal-footer button {
+  border-radius: 0%;
+}
+
+.modalCloseButton {
+  background-color: #ff999e;
+}
+
+.updateProductFormWhole section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem;
 }
 /*# sourceMappingURL=styles.css.map */

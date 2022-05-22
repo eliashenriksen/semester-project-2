@@ -15,6 +15,7 @@ export default function logoutButton() {
 
     function logoutFunction() {
       deleteFromStorage("JWT");
+      deleteFromStorage("username");
       navLinkLogout.style.display = "none";
       document.location.href = "index.html";
     }

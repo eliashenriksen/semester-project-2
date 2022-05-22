@@ -62,7 +62,7 @@
         </div>
       </nav>
     </header>
-    <main id="adminHomeMain">
+    <main id="adminNewProductMain">
       <div class="loaderHolder">
         <div class="spinner"></div>
         <p>Loading</p>
@@ -85,12 +85,34 @@
         </style>
       </div>
       <section class="container">
-        <h1 class="adminHomeH1">Welcome back</h1>
-        <h2>Showing all products...</h2>
-        <section class="adminHomeNewProductButtonHolder">
-          <a href="adminnewproduct.html" class="ctaButtons">Add new product</a>
+        <h1>Add new product</h1>
+        <h2>Please fill out the information below...</h2>
+        <section class="adminNewProductFormHolder">
+          <form class="newProductFormWhole" method="post" action="http://localhost:1337/products">
+            <section>
+              <label for="title">Product title</label>
+              <input id="title" name="title" type="text">
+            </section>
+            <section>
+              <label for="price">Single product Price in USD</label>
+              <input id="price" name="price" type="number">
+            </section>
+            <section>
+              <label for="image">Upload product image</label>
+              <input id="image" name="files.image" type="file" accept="image/png, image/jpeg" required>
+            </section>
+            <section>
+              <label for="description">Product description</label>
+              <input id="description" name="description" type="text">
+            </section>
+            <section>
+              <input type="hidden" name="featured" value="false">
+              <label for="featured">Is the product featured? (check for yes)</label>
+              <input id="featured" name="featured" type="checkbox" value="true">
+            </section>
+            <button class="newProductFormButton ctaButtons">Add product</button>
+          </form>
         </section>
-        <section class="adminHomeProductsHolder container row row-cols-1 row-cols-lg-4 g-0"></section>
       </section>
       <div class="messageHolder"></div>
     </main>
@@ -110,8 +132,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <script src="/js/moment/moment.js"></script>
-  <script src="/js/pages/adminhome.js" type="module"></script>
+  <script src="/js/pages/adminnewproduct.js" type="module"></script>
 </body>
 
 </html>

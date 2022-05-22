@@ -62,7 +62,7 @@
         </div>
       </nav>
     </header>
-    <main id="adminHomeMain">
+    <main id="adminEditProductMain">
       <div class="loaderHolder">
         <div class="spinner"></div>
         <p>Loading</p>
@@ -85,12 +85,54 @@
         </style>
       </div>
       <section class="container">
-        <h1 class="adminHomeH1">Welcome back</h1>
-        <h2>Showing all products...</h2>
-        <section class="adminHomeNewProductButtonHolder">
-          <a href="adminnewproduct.html" class="ctaButtons">Add new product</a>
+        <h1>Editing product:</h1>
+        <h2>Please fill out the information you wish to change below...</h2>
+        <section class="adminNewProductFormHolder">
+          <form class="updateProductFormWhole" enctype="application/json" method="put"
+            action="http://localhost:1337/products">
+            <section>
+              <label for="title">Update product title</label>
+              <input id="title" name="title" type="text">
+            </section>
+            <section>
+              <label for="price">Update product price in USD</label>
+              <input id="price" name="price" type="number">
+            </section>
+            <section>
+              <label for="image">Update product image</label>
+              <input id="image" name="files.image" type="file" accept="image/png, image/jpeg">
+            </section>
+            <section>
+              <label for="description">Update product description</label>
+              <input id="description" name="description" type="text">
+            </section>
+            <section>
+              <input type="hidden" name="featured" value="false">
+              <label for="featured">Update product featured status (check if featured)</label>
+              <input id="featured" name="featured" type="checkbox" value="true">
+            </section>
+            <button class="newProductFormButton ctaButtons">Update product</button>
+          </form>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete product</button>
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Do you really wish to delete the product?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Please confirm.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary ctaButtons modalCloseButton" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary ctaButtons modalConfirmButton" id="productDeleteButton">Confirm</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
-        <section class="adminHomeProductsHolder container row row-cols-1 row-cols-lg-4 g-0"></section>
       </section>
       <div class="messageHolder"></div>
     </main>
@@ -110,8 +152,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <script src="/js/moment/moment.js"></script>
-  <script src="/js/pages/adminhome.js" type="module"></script>
+  <script src="/js/pages/admineditproduct.js" type="module"></script>
 </body>
 
 </html>

@@ -35,28 +35,33 @@ async function productSpecificContentCreator() {
     const productId = queryParam.get("product_id");
 
     const call1 = await fetch(apilink + "/products" + `/${productId}`);
-    //const call2 = await fetch(apilink + "/products?featured=true");
     const response1 = await call1.json();
-    //const response2 = await call2.json();
+
+    //console.log(response1);
 
     logoutButton();
     cartItemNumber();
     loaderRemover();
 
-    console.log(response1);
     
+    //Checking if the product has an image associated with it in the API, if not it gets a local placeholder image from the images folder.
+    if(!response1.image) {
+        response1.image = { url: "/images/productplaceholderimage.jpg" };
+      } else {
+        response1.image.url = `${apilink}${response1.image.url}`;
+      }
+
     productSpecificH1.innerHTML = `${response1.title}`;
     productSpecificBreadcrumbCurrent.innerHTML = `${response1.title}`;
     productSpecificH2.innerHTML = `${response1.title}`;
     productSpecificDescription.innerHTML = `${response1.description}`;
     productSpecificPrice.innerHTML = `USD ${response1.price}`;
-    productSpecificImageHolder.innerHTML = `<img src="${apilink}${response1.image.url}" alt="${response1.image.alternativeText}" class="productSpecificImage">`;
+    productSpecificImageHolder.innerHTML = `<img src="${response1.image.url}" alt="${response1.image.alternativeText}" class="productSpecificImage">`;
 
-    console.log(response1);
 
-    productSpecificAddToCart.addEventListener("click", testFunc1);
+    productSpecificAddToCart.addEventListener("click", addToCartFunction);
 
-    function testFunc1() {
+    function addToCartFunction() {
       messagePopup("Item added to cart!");
       updatedCartProducts.push(response1);
       localStorage.setItem("cartProductList", JSON.stringify(updatedCartProducts));
@@ -66,8 +71,7 @@ async function productSpecificContentCreator() {
 
   } catch(error) {
     console.log(error);
-    //messageHolder.style.display = "flex";
-    //messageHolder.innerHTML = `<p>An error has occured while fetching the book list, please contact support.</p>`;
+    messagePopup(`${error}`);
   } 
 
 }
