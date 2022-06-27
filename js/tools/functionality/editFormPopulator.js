@@ -19,7 +19,7 @@ export default async function editFormPopulator() {
     console.log(updatePopulatorResponse1);
 
     adminEditProductH1.innerHTML = "Editing product: " + updatePopulatorResponse1.title;
-    adminEditProductImageHolder.innerHTML = `<img src="${apilink}${updatePopulatorResponse1.image.url}">`;
+    adminEditProductImageHolder.innerHTML = `<img src="${updatePopulatorResponse1.image.url}">`;
     updateProductFormTitle.value = updatePopulatorResponse1.title;
     updateProductFormPrice.value = updatePopulatorResponse1.price;
     updateProductFormDescription.value = updatePopulatorResponse1.description;

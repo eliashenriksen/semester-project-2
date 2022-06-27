@@ -30,7 +30,7 @@ async function adminHomeContentCreator() {
       if(!response1[i].image) {
         response1[i].image = { url: "/images/productplaceholderimage.jpg" };
       } else {
-        response1[i].image.url = `${apilink}${response1[i].image.url}`;
+        response1[i].image.url = `${response1[i].image.url}`;
       }
 
       adminHomeProductsHolder.innerHTML += `

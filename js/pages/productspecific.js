@@ -48,7 +48,7 @@ async function productSpecificContentCreator() {
     if(!response1.image) {
         response1.image = { url: "/images/productplaceholderimage.jpg" };
       } else {
-        response1.image.url = `${apilink}${response1.image.url}`;
+        response1.image.url = `${response1.image.url}`;
       }
 
     productSpecificH1.innerHTML = `${response1.title}`;

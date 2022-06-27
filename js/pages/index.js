@@ -18,7 +18,7 @@ async function homeContentCreator() {
     //console.log(response2);
 
     heroBannerHolder.innerHTML = `
-    <img src="${apilink}${response1.hero_banner.url}" alt="${response1.hero_banner.alternativeText}">
+    <img src="${response1.hero_banner.url}" alt="${response1.hero_banner.alternativeText}">
     <h1>Your one stop shop for trendy sneakers!</h1>
     `;
 
@@ -28,7 +28,7 @@ async function homeContentCreator() {
       carouselItemHolder.innerHTML += `
       <div class="carousel-item">
           <a href="productspecific.html?product_id=${response2[i].id}">
-            <img class="d-block w-100" src="${apilink}${response2[i].image.url}" alt="test">
+            <img class="d-block w-100" src="${response2[i].image.url}" alt="test">
             <div class="carousel-caption d-none d-md-block">
               <h5>${response2[i].title}</h5>
               <p>${response2[i].description}</p>
