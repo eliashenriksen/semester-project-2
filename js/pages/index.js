@@ -14,9 +14,6 @@ async function homeContentCreator() {
     const response1 = await call1.json();
     const response2 = await call2.json();
 
-    //console.log(response1);
-    //console.log(response2);
-
     heroBannerHolder.innerHTML = `
     <img src="${response1.hero_banner.url}" alt="${response1.hero_banner.alternativeText}">
     <h1>Your one stop shop for trendy sneakers!</h1>

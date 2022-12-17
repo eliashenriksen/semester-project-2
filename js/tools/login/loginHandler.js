@@ -27,8 +27,6 @@ export default async function loginHandler(username, password) {
         } else {
             uploadToStorage("JWT", response.jwt);
             uploadToStorage("username", response.user.username);
-            //console.log(response.jwt);
-            //console.log(response.user.username);
             document.location.href = "adminhome.html";
         }
 

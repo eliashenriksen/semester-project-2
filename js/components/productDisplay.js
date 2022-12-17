@@ -5,9 +5,7 @@ export default function productDisplay(inputData) {
   productsHolder.innerHTML = "";
 
   for (let i = 0; i < inputData.length; i++) {
-    //console.log(inputData[i].title);
 
-    
     productsHolder.innerHTML += `
     <a href="productspecific.html?product_id=${inputData[i].id}">
       <div class="card col-lg-3" style="width: 18rem;">

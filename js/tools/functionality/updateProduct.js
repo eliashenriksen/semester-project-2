@@ -35,11 +35,7 @@ export default async function adminUpdateProduct() {
         body,
         headers
       });
-      //const updateResponse1 = await updateCall1.json();
       messagePopup("Product updated!");
-      //console.log(updateResponse1);
-      //console.log(fileSelector.files);
-
     } catch(error) {
       console.log(error);
     }

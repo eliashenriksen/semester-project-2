@@ -13,8 +13,6 @@ export default function cartRemoveFunction(event) {
 
   const selectedCartItemId = event.target.dataset.productId;
 
-  //console.log(selectedCartItemId);
-
   const removeFromCartArray = currentCartProducts.findIndex(function(product) {
       if(parseInt(selectedCartItemId) === parseInt(product.id)) {
         return true;
@@ -29,6 +27,4 @@ export default function cartRemoveFunction(event) {
   emptyCartChecker();
   cartSummarizer();
   cartItemNumber();
-
-  //console.log(removeFromCartArray);
 }

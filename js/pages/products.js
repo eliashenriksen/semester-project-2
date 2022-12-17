@@ -14,8 +14,6 @@ async function productsContentCreator() {
     const call1 = await fetch(apilink + "/products");
     const response1 = await call1.json();
 
-    //console.log(response1);
-
     productDisplay(response1);
     productFilter(response1);
     logoutButton();

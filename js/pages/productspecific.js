@@ -37,8 +37,6 @@ async function productSpecificContentCreator() {
     const call1 = await fetch(apilink + "/products" + `/${productId}`);
     const response1 = await call1.json();
 
-    //console.log(response1);
-
     logoutButton();
     cartItemNumber();
     loaderRemover();
