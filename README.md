@@ -49,6 +49,6 @@ To run the app, simply run the index.html with any liveserver (localserver) plug
 
 This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
 
-[My Website](www.eliashenriksen.no)
+[My Website](https://www.eliashenriksen.no)
 
 [My LinkedIn page](https://www.linkedin.com/in/elias-henriksen-450244223/)
