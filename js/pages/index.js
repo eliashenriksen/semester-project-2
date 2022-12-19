@@ -9,26 +9,25 @@ async function homeContentCreator() {
   const carouselItemHolder = document.querySelector(".carousel-inner");
 
   try {
-    const call1 = await fetch(apilink + "/home");
-    const call2 = await fetch(apilink + "/products?featured=true");
+    const call1 = await fetch(apilink + "/api/home?populate=*");
+    const call2 = await fetch(apilink + "/api/products?filters[featured][$eq]=true&populate=*");
     const response1 = await call1.json();
     const response2 = await call2.json();
 
     heroBannerHolder.innerHTML = `
-    <img src="${response1.hero_banner.url}" alt="${response1.hero_banner.alternativeText}">
+    <img src="${response1.data.attributes.hero_banner.data.attributes.url}" alt="${response1.data.attributes.hero_banner_alt_text}">
     <h1>Your one stop shop for trendy sneakers!</h1>
     `;
 
-    for (let i = 0; i < response2.length; i++) {
-      console.log(response2[i].title);
+    for (let i = 0; i < response2.data.length; i++) {
 
       carouselItemHolder.innerHTML += `
       <div class="carousel-item">
-          <a href="productspecific.html?product_id=${response2[i].id}">
-            <img class="d-block w-100" src="${response2[i].image.url}" alt="test">
+          <a href="productspecific.html?product_id=${response2.data[i].id}">
+            <img class="d-block w-100" src="${response2.data[i].attributes.image.data.attributes.url}" alt="test">
             <div class="carousel-caption d-none d-md-block">
-              <h5>${response2[i].title}</h5>
-              <p>${response2[i].description}</p>
+              <h5>${response2.data[i].attributes.title}</h5>
+              <p>${response2.data[i].attributes.description}</p>
             </div>
           </a>
         </div>

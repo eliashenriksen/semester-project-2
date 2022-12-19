@@ -11,7 +11,7 @@ import messagePopup from "../tools/functionality/messagePopup.js";
 async function productsContentCreator() {
 
   try {
-    const call1 = await fetch(apilink + "/products");
+    const call1 = await fetch(apilink + "/api/products?populate=*");
     const response1 = await call1.json();
 
     productDisplay(response1);

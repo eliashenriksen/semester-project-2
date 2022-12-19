@@ -10,10 +10,10 @@ export default function productFilter(inputData) {
 
         let filterTextInputValue = event.target.value;
 
-        const filteredProducts = inputData.filter(productFilterFunction);
+        const filteredProducts = inputData.data.filter(productFilterFunction);
 
         function productFilterFunction(product) {
-            if (product.title.toLowerCase().includes(`${filterTextInputValue.toLowerCase()}`) || product.description.toLowerCase().includes(`${filterTextInputValue.toLowerCase()}`)) {
+            if (product.attributes.title.toLowerCase().includes(`${filterTextInputValue.toLowerCase()}`) || product.attributes.description.toLowerCase().includes(`${filterTextInputValue.toLowerCase()}`)) {
                 return true;
             }
         }

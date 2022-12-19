@@ -4,7 +4,7 @@ import messagePopup from "../functionality/messagePopup.js";
 
 export default async function loginHandler(username, password) {
 
-    const apilinkForAuth = apilink + "/auth/local";
+    const apilinkForAuth = apilink + "/api/auth/local";
     const payload = JSON.stringify({identifier: username, password: password});
 
     const options = {

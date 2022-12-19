@@ -34,27 +34,35 @@ async function productSpecificContentCreator() {
     const queryParam = new URLSearchParams(queryString);
     const productId = queryParam.get("product_id");
 
-    const call1 = await fetch(apilink + "/products" + `/${productId}`);
-    const response1 = await call1.json();
+    const call1 = await fetch(apilink + "/api/products" + `/${productId}?populate=*`);
+    const response0 = await call1.json();
+
+    const response1 = response0.data;
 
     logoutButton();
     cartItemNumber();
     loaderRemover();
 
+    const title = response1.attributes.title;
+    const description = response1.attributes.description;
+    const price = response1.attributes.price;
     
-    //Checking if the product has an image associated with it in the API, if not it gets a local placeholder image from the images folder.
-    if(!response1.image) {
-        response1.image = { url: "/images/productplaceholderimage.jpg" };
+    // Checking if the product has an image associated with it in the API, if not it gets a local placeholder image from the images folder.
+    //After my free heroku tier ended, i swapped to a Railway deployed Strapi project, and at the same time upgraded to Strapi V4, which resulted in
+    //quite a lot of changes to the api endpoints, the super long endpoints under are the result of simply making the project work with the new Railway deployed API,
+    //without reworking too much of the original code.
+    if(!response1.attributes.image.data.attributes.url) {
+        response1.attributes.image.data.attributes.url = "/images/productplaceholderimage.jpg";
       } else {
-        response1.image.url = `${response1.image.url}`;
+        response1.attributes.image.data.attributes.url = `${response1.attributes.image.data.attributes.url}`;
       }
 
-    productSpecificH1.innerHTML = `${response1.title}`;
-    productSpecificBreadcrumbCurrent.innerHTML = `${response1.title}`;
-    productSpecificH2.innerHTML = `${response1.title}`;
-    productSpecificDescription.innerHTML = `${response1.description}`;
-    productSpecificPrice.innerHTML = `USD ${response1.price}`;
-    productSpecificImageHolder.innerHTML = `<img src="${response1.image.url}" alt="${response1.image.alternativeText}" class="productSpecificImage">`;
+    productSpecificH1.innerHTML = `${title}`;
+    productSpecificBreadcrumbCurrent.innerHTML = `${title}`;
+    productSpecificH2.innerHTML = `${title}`;
+    productSpecificDescription.innerHTML = `${description}`;
+    productSpecificPrice.innerHTML = `USD ${price}`;
+    productSpecificImageHolder.innerHTML = `<img src="${response1.attributes.image.data.attributes.url}" alt="${response1.attributes.image.data.attributes.alternativeText}" class="productSpecificImage">`;
 
 
     productSpecificAddToCart.addEventListener("click", addToCartFunction);
@@ -63,7 +71,6 @@ async function productSpecificContentCreator() {
       messagePopup("Item added to cart!");
       updatedCartProducts.push(response1);
       localStorage.setItem("cartProductList", JSON.stringify(updatedCartProducts));
-      console.log(updatedCartProducts);
       cartItemNumber();
     }
 

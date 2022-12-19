@@ -1,4 +1,3 @@
-import { apiLinkMasterKey as apilink } from "../settings/settings.js";
 import cartRemoveFunction from "../tools/functionality/cartRemove.js";
 
 export default function cartProductDisplay() {
@@ -14,12 +13,12 @@ export default function cartProductDisplay() {
       <div class="cartProductBlock">
         <div class="cartProductBlockImageHolder">
           <a href="productspecific.html?product_id=${currentCartProducts[i].id}">
-            <img src="${currentCartProducts[i].image.url}" alt="${currentCartProducts[i].image.alternativeText}">
+            <img src="${currentCartProducts[i].attributes.image.data.attributes.url}" alt="${currentCartProducts[i].attributes.image.data.attributes.alternativeText}">
           </a>
         </div>
         <div class="cartProductBlockInfo">
-          <h2>${currentCartProducts[i].title}</h2>
-          <h3 class="productPrices">USD ${currentCartProducts[i].price}</h3>
+          <h2>${currentCartProducts[i].attributes.title}</h2>
+          <h3 class="productPrices">USD ${currentCartProducts[i].attributes.price}</h3>
         </div>
         <div class="cartProductBlockRemoveHolder">
           <a data-product-id="${currentCartProducts[i].id}" class="cartProductBlockRemove">Remove item</a>

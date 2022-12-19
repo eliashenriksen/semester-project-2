@@ -15,8 +15,9 @@ async function adminHomeContentCreator() {
   const adminHomeH1 = document.querySelector(".adminHomeH1");
 
   try {
-    const call1 = await fetch(apilink + "/products");
-    const response1 = await call1.json();
+    const call1 = await fetch(apilink + "/api/products?populate=*");
+    const response0 = await call1.json();
+    const response1 = response0.data;
 
     console.log(response1);
 
@@ -27,20 +28,20 @@ async function adminHomeContentCreator() {
       console.log(response1[i]);
 
       //Checking if the product has an image associated with it in the API, if not it gets a local placeholder image from the images folder.
-      if(!response1[i].image) {
-        response1[i].image = { url: "/images/productplaceholderimage.jpg" };
+      if(!response1[i].attributes.image.data.attributes.url) {
+        response1[i].attributes.image.data.attributes.url = "/images/productplaceholderimage.jpg";
       } else {
-        response1[i].image.url = `${response1[i].image.url}`;
+        response1[i].attributes.image.data.attributes.url = `${response1[i].attributes.image.data.attributes.url}`;
       }
 
       adminHomeProductsHolder.innerHTML += `
         <div class="card adminHomeProductCard" style="width: 18rem;">
           <a href="productspecific.html?product_id=${response1[i].id}">
-            <img src="${response1[i].image.url}" class="card-img-top" alt="${response1[i].image.alternativeText}">
+            <img src="${response1[i].attributes.image.data.attributes.url}" class="card-img-top" alt="${response1[i].attributes.image.data.attributes.alternativeText}">
           </a>
           <div class="card-body">
-            <h5 class="card-title">${response1[i].title}</h5>
-            <p class="card-text">${response1[i].description}</p>
+            <h5 class="card-title">${response1[i].attributes.title}</h5>
+            <p class="card-text">${response1[i].attributes.description}</p>
           </div>
           <div class="adminHomeProductCardInfoHolder">
             <div class="adminHomeProductCardInfoLeft">
@@ -53,11 +54,11 @@ async function adminHomeContentCreator() {
             </div>
             <div class="adminHomeProductCardInfoRight">
               <p>${response1[i].id}</p>
-              <p>USD ${response1[i].price}</p>
-              <p>${response1[i].featured}</p>
-              <p>${moment(response1[i].created_at).format("DD MM YYYY")}</p>
-              <p>${moment(response1[i].published_at).format("DD MM YYYY")}</p>
-              <p>${moment(response1[i].updated_at).format("DD MM YYYY")}</p>
+              <p>USD ${response1[i].attributes.price}</p>
+              <p>${response1[i].attributes.featured}</p>
+              <p>${moment(response1[i].attributes.createdAt).format("DD MM YYYY")}</p>
+              <p>${moment(response1[i].attributes.publishedAt).format("DD MM YYYY")}</p>
+              <p>${moment(response1[i].attributes.updatedAt).format("DD MM YYYY")}</p>
             </div>
           </div>
           <div class="card-body adminHomeProductCardBottom">
