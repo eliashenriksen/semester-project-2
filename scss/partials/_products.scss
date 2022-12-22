@@ -33,6 +33,9 @@
 .productFilterInput:focus {
   outline: none;
   width: 25rem;
+  @media only screen and (max-width: 1400px) {
+    width: 14rem;
+  }
 }
 
 .productsHolder {

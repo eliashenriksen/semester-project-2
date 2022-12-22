@@ -10,9 +10,9 @@
 
   ul {
     @media only screen and (max-width: 1400px) {
-        margin-left: 2rem !important;
-        margin-right: auto !important;
-      }
+      margin-left: 2rem !important;
+      margin-right: auto !important;
+    }
   }
 }
 
@@ -24,8 +24,8 @@
 .navbar-collapse {
 
   @media only screen and (max-width: 992px) {
-      background-color: $mainBrandColor !important;
-    }
+    background-color: $mainBrandColor !important;
+  }
 
 }
 
@@ -33,13 +33,20 @@
   max-width: 200px;
   height: auto;
   margin-right: 2rem;
+  @media only screen and (max-width: 1400px) {
+    margin-right: 0rem;
+  }
 }
 
 .navbar-brand {
   z-index: 9999;
   @media only screen and (max-width: 1400px) {
-      margin-left: 2rem;
-    }
+    margin-left: 2rem;
+  }
+
+  @media only screen and (max-width: 360px) {
+    margin-left: 1rem;
+  }
 }
 
 .nav-link {
@@ -50,8 +57,8 @@
 .navLinkShoppingcart {
   display: flex;
   @media only screen and (max-width: 1400px) {
-      margin:0rem 0rem 1rem 0rem;
-   }
+    margin:0rem 0rem 1rem 0rem;
+  }
 }
 
 .navLinkShoppingcart:hover {
@@ -80,6 +87,7 @@
   margin-right: 2rem;
   outline: none;
   border: none;
+  z-index: 9999;
 }
 
 .cartItemNumberHolder {
@@ -121,7 +129,7 @@
   margin-left: 2rem;
   
   @media only screen and (max-width: 576px) {
-      flex-direction: column;
-   }
+    flex-direction: column;
+  }
 
 }

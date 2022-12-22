@@ -1,15 +1,27 @@
 #productSpecificMain {
   @extend #homepageMain;
+  @media only screen and (max-width: 1400px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .productSpecificProductBlock {
   display: none;
+  justify-content: center;
+  align-items: center;
 
   div {
     margin-bottom: 2rem;
     margin-top: 2rem;
   }
 
+  @media only screen and (max-width: 1400px) {
+    margin: 0rem !important;
+    padding: 0rem !important;
+  }
 }
 
 .productSpecificImageHolder {
@@ -22,11 +34,19 @@
     box-shadow: $mainBackgroundShadow;
   }
 
+  @media only screen and (max-width: 1400px) {
+    align-items: center;
+    justify-content: center;
+  }
+
 }
 
 .productSpecificImage {
   width: 400px;
   object-fit: cover;
+  @media only screen and (max-width: 1400px) {
+    width: 300px;
+  }
 }
 
 .productSpecificProductBlockRight {
@@ -43,6 +63,15 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+  @media only screen and (max-width: 1400px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.productSpecificDescription {
+  word-break: break-word;
 }
 
 .productSpecificAddToCart {
